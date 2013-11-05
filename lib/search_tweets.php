@@ -41,8 +41,11 @@ if ($code == 200) {                                                     //checks
 				echo $embededTweet['html'] . "<br>";
 			}
 		} else {
-			echo $tmhOAuth->response['error'];            //display any errors in getting the embedded tweets
+			echo $tmhOAuth->response['error'];
 			$embededTweet = array('html' => $tweet["text"]);   //it might just save the tweet as text
+			if(isset($_GET['h'])){
+				echo $embededTweet['html'] . "<br>";
+			}
 		}
 		
 		$marker = $doc->addChild("marker");                                 //forms the xml file to return
@@ -64,5 +67,6 @@ if ($code == 200) {                                                     //checks
 		include 'footer.php';
 	} 
 } else {
-	echo $tmhOAuth->response['error'];
+	$_SESSION['error'] = $tmhOAuth->response['error']; 
+	header("Location: get_user.php");
 } ?>

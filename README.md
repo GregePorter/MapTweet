@@ -7,7 +7,7 @@ General:
 This project utilizes the PHP Twitter library, tmhOAuth, written by @themattharris. I used his tmhOAuthExample class and oauth_authorize_flow class because they were so well formed.
 
 To use this, just copy the repo to your web server folder and visit the index.php.
-In my case, I put the folder into /var/www/GetTweet and visited http://localhost/GetTweet
+In my case, I put the folder into /var/www/MapTweet and visited http://localhost/MapTweet
 
 When you first start this, you have to authorize the application. You should be provided with a link which will lead you to the Twitter login page.
 

@@ -19,7 +19,7 @@ if(isset($_GET['q'])){                                                   //Check
 if(!isset($_COOKIE['access_token']) ||  isset($_GET['s'])){             //if we want to start a new session
 	include 'lib/oauth_authorize_flow.php';
 } elseif (!isset($_SESSION['q'])){                                     //if we haven't chosen a user yet
-	include 'lib/get_user.php';
+	header("Location: lib/get_user.php");
 } elseif (isset($_GET['h'])){                                          //if we want to map the tweets
 	header("Location: lib/map.php?q=" . $_SESSION['q']);
 } else {                                                                  //if we want to view the embedded tweets
