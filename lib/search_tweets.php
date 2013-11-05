@@ -41,6 +41,7 @@ if ($code == 200) {                                                     //checks
 				echo $embededTweet['html'] . "<br>";
 			}
 		} else {
+			echo $tmhOAuth->response['error'];            //display any errors in getting the embedded tweets
 			$embededTweet = array('html' => $tweet["text"]);   //it might just save the tweet as text
 		}
 		
